@@ -1,4 +1,6 @@
 package com.manutencaoindustrial.view;
+import com.manutencaoindustrial.model.Maquina;
+import com.manutencaoindustrial.model.Tecnico;
 import com.manutencaoindustrial.service.Gerenciador;
 
 import java.util.Scanner;
@@ -43,6 +45,23 @@ public class View {
         public String estoque(){
         System.out.println("Estoque inicial: ");
             return sc.nextLine();
+    }
+
+    public void visualizarMaquinas(Maquina maquina){
+        System.out.println("\n" + maquina.toString());
+    }
+
+    public void visualizarTecnicos(Tecnico tecnico){
+        System.out.println("\n " + tecnico.toString());
+    }
+
+    public void ordemManutencao(){
+        System.out.println(" -------- ORDEM DE MANUTENÇÃO ---------");
+    }
+
+    public int escolhaID(String entidade){
+        System.out.printf("\n Escolha o %s pelo ID: " , entidade);
+        return sc.nextInt();
     }
 
     public void duplicata (String entidade){

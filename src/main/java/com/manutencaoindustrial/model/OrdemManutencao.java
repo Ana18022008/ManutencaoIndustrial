@@ -23,6 +23,13 @@ public class OrdemManutencao {
         this.status = status;
     }
 
+    public OrdemManutencao(Maquina id_maquina, Tecnico id_tecnico, LocalDate dataSolicitacao, Status status) {
+        this.id_maquina = id_maquina;
+        this.id_tecnico = id_tecnico;
+        this.dataSolicitacao = dataSolicitacao;
+        this.status = status;
+    }
+
     public int getId() {
         return id;
     }

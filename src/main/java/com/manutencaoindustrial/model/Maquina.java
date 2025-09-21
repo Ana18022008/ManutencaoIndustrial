@@ -24,10 +24,8 @@ public class Maquina {
         this.status = status;
     }
 
-    public Maquina(int id, String nome, String setor) {
+    public Maquina(int id) {
         this.id = id;
-        this.nome = nome;
-        this.setor = setor;
     }
 
     public int getId() {
@@ -65,7 +63,7 @@ public class Maquina {
     @Override
     public String toString() {
         return "\n - Máquina - " +
-                "\n ID : " + id +
+                "\n ID : " + id + 1 +
                 "\n NOME : " + nome +
                 "\n SETOR : " + setor +
                 "\n STATUS : " + status;

@@ -44,7 +44,7 @@ public class Tecnico {
     @Override
     public String toString(){
         return "\n - Tecnico - " +
-                "\n ID : " + id +
+                "\n ID : " + id + 1 +
                 "\n NOME : " + nome +
                 "\n ESPECIALIDADE : " + especialidade;
     }

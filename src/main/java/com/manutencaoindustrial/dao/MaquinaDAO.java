@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MaquinaDAO {
 
@@ -46,4 +48,32 @@ public class MaquinaDAO {
            return false;
        }
    }
+
+    public List<Maquina> listar() {
+        String query = """
+                Select id, nome, setor, status from Maquina where status = 'OPERACIONAL';
+                """;
+        List<Maquina> maquinas = new ArrayList<>();
+
+        try (Connection conn = Conexao.conectar();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()){
+                int id = rs.getInt("id");
+                String nome = rs.getString("nome");
+                String setor = rs.getString("setor");
+                Maquina.Status status = Maquina.Status.valueOf(rs.getString("status"));
+
+                Maquina maquina = new Maquina(id, nome, setor, status);
+                maquinas.add(maquina);
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return maquinas;
+    }
+
 }
