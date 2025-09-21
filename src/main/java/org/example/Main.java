@@ -10,10 +10,19 @@ public class Main {
       View view = new View();
       Gerenciador gerenciador = new Gerenciador();
        do{
-
+           escolha = view.menu();
+           gerenciador.Gerenciar(view, escolha);
        }while (escolha != 0);
-        escolha = view.menu();
-        gerenciador.Gerenciar(view, escolha);
+        System.out.println("Finalizando...");
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Finalizado!");
+            System.exit(0);
         }
 
     }

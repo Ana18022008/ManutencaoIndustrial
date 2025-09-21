@@ -7,8 +7,8 @@ public class Maquina {
     private String setor;
     private Status status;
 
-    public static enum Status{
-        Operacional, Em_Manutencao;
+    public enum Status{
+        OPERACIONAL, EM_MANUTENCAO;
     }
 
     public Maquina( String nome, String setor, Status status) {
