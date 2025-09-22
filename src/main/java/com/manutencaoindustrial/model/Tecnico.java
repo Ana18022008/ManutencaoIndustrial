@@ -17,6 +17,10 @@ public class Tecnico {
         this.especialidade = especialidade;
     }
 
+    public Tecnico(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }

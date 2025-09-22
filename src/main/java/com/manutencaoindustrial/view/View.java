@@ -1,5 +1,7 @@
 package com.manutencaoindustrial.view;
 import com.manutencaoindustrial.model.Maquina;
+import com.manutencaoindustrial.model.OrdemManutencao;
+import com.manutencaoindustrial.model.Peca;
 import com.manutencaoindustrial.model.Tecnico;
 import com.manutencaoindustrial.service.Gerenciador;
 
@@ -55,12 +57,32 @@ public class View {
         System.out.println("\n " + tecnico.toString());
     }
 
+    public void visualizarOrdemManutencao(OrdemManutencao ordemManutencao){
+        System.out.println("\n" + ordemManutencao.toString());
+    }
+
+    public void visualizarPeca(Peca peca){
+        System.out.println("\n " + peca.toString());
+    }
+
     public void ordemManutencao(){
         System.out.println(" -------- ORDEM DE MANUTENÇÃO ---------");
     }
 
     public int escolhaID(String entidade){
         System.out.printf("\n Escolha o %s pelo ID: " , entidade);
+        return sc.nextInt();
+    }
+
+    public double escolhaQuantidade(){
+        System.out.println("\n Quantidade de peças necessárias : ");
+        return sc.nextDouble();
+    }
+
+    public int adicionarNovaPeca(){
+        System.out.println("\n - Adicionar nova Peça -");
+        System.out.println(" 1. Sim");
+        System.out.println(" 2. Não");
         return sc.nextInt();
     }
 
